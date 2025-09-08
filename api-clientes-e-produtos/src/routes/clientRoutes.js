@@ -21,7 +21,7 @@ router.get('/name/:name', clientController.getClientByName);
 
 router.post('/', clientController.createClient);
 
-//5º Rota para criar um novo cliente
+//5º Rota para editar um cliente
 router.put('/id/:id', clientController.updateClient);
 
 //6º Rota para excluir um cliente

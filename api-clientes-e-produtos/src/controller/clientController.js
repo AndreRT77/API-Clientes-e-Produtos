@@ -56,11 +56,39 @@ const createClient = (req, res) => {
         const newClient = clientModel.createClient({ name, email, telefone, endereço, dataCadastro, ativo});
         res.status(201).json(newClient);
     }
-}
+};
 
+// método do controlador para atualizar um cliente
+const updateClient = (req, res) => {
+    const id = parseInt(req.params.id);
+    const updatedData = req.body;
+
+    const client = clientModel.updateClient(id, updatedData);
+
+    if (client) {
+        res.status(200).json(client);
+    } else {
+        res.status(404).json({ mensagem: 'Cliente não encontrado no banco de dados!' });
+    }
+};
+
+// método do controlador para deleter um cliente
+const deleteClient = (req, res) => {
+    const id = parseInt(req.params.id);
+
+    const client = clientModel.deleteClient(id);
+
+    if (client) {
+        res.status(200).json({ mensagem: 'Cliente removido com sucesso!', cliente: client });
+    } else {
+        res.status(404).json({ mensagem: 'Cliente não encontrado no banco de dados!' });
+    }
+};
 module.exports = {
     getAllClients,
     getClientById,
     getClientByName,
     createClient,
+    updateClient,
+    deleteClient
 }
