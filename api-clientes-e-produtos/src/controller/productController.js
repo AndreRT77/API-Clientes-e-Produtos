@@ -1,8 +1,8 @@
-const products = require('../model/productModel');
+const productModel = require('../model/productModel');
 
 
 const getAllProducts = (req, res) => {
-    const users = clientModel.findAll();
+    const users = productModel.findAll();
     res.status(200).json(users);
 }
 
@@ -39,7 +39,7 @@ const getProductByName = (req, res) => {
         //e devolver os dados do usuário em formato JSON
         res.status(200).json(product);
     }else{
-        res.status(404).json({mensagem: ' Cliente não encontrado no banco de dados!'});
+        res.status(404).json({mensagem: ' Produto não encontrado no banco de dados!'});
     }
 
 };
@@ -52,14 +52,13 @@ const createProduct = (req, res) => {
     if(!name || !descricao || !preco|| !categoria || !estoque || !ativo){
         return res.status(400).json({mensagem: 'Nome e Email são obrigatórios'});
     }else{
-        const newProduct = clientModel.createClient({ name, descricao, preco, categoria, estoque, ativo});
+        const newProduct = productModel.createProduct({ name, descricao, preco, categoria, estoque, ativo});
         res.status(201).json(newProduct);
     }
 };
 
-//método do controlador para atualizar um cliente
 
-// método do controlador para atualizar um cliente
+// método do controlador para atualizar um produto
 const updateProduct = (req, res) => {
     const id = parseInt(req.params.id);
     const updatedData = req.body;
@@ -73,7 +72,7 @@ const updateProduct = (req, res) => {
     }
 };
 
-// método do controlador para deleter um cliente
+// método do controlador para deleter um produto
 const deleteProduct = (req, res) => {
     const id = parseInt(req.params.id);
 

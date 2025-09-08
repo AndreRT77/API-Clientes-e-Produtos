@@ -55,12 +55,12 @@ const findAll = () => {
 
 //Função para buscar um cliente por ID
 const findByID = (id) => {
-    return products.find(client => client.id === id);
+    return products.find(product => product.id === id);
 };
 
 //Função para buscar um cliente pelo nome
 const findByName = (name) =>{
-    return products.find(client => client.name === name);
+    return products.find(product => product.name === name);
 }
 
 
