@@ -27,7 +27,7 @@ Retorna os detalhes de um cliente específico, utilizando seu ID como parâmetro
 
 Permite buscar clientes pelo nome, retornando todos os registros que correspondem ao nome fornecido.
 
-<img width="1919" height="956" alt="Obter cliente por Nome" src="./readmeIMG/GetClientByName.png />
+<img width="1829" height="943" alt="GetClientByName" src="https://github.com/user-attachments/assets/1ae9cb4a-1bf7-4fab-b7c9-28dbae9763c1" />
 
 #### 4. Criar Novo Cliente (POST /api/clients)
 
