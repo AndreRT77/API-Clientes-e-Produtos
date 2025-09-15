@@ -96,8 +96,6 @@ Remove um produto da base de dados, utilizando seu ID como referência.
 *   Node.js
 *   Express.js
 *   JavaScript
-*   HTML
-*   CSS
 *   JSON
 *   Git
 *   GitHub
